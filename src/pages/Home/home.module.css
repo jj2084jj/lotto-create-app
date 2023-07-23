@@ -7,3 +7,11 @@
   background-color: #fff;
   color: black;
 }
+.create_btn {
+  position: fixed;
+  bottom: 0;
+  background-color: red;
+  border-radius: 50px 50px 0 0;
+  width: 100vw;
+  border: none;
+}

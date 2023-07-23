@@ -15,12 +15,15 @@ export default function HomeContainer() {
 
   return (
     <div>
-      <section className="container">
+      <section className="container mt-2">
         <hgroup className="mb-4">
           <h1 className="mb-1">로또 자동 생성기</h1>
-          <p>원하는 번호를 선택 후, 랜덤으로 번호가 출력됩니다</p>
+          <p>
+            원하는 번호를 선택 후, 선택된 번호를 추가한 랜덤 번호가 출력됩니다
+            👀
+          </p>
         </hgroup>
-        <div className="flex">
+        <div className="flex center mb-5">
           {balls?.map(
             (item: { value: number; active: boolean }, index: number) => {
               return (
@@ -41,7 +44,9 @@ export default function HomeContainer() {
           )}
         </div>
       </section>
-      <button>내보내기</button>
+      <div>
+        <button className={styled.create_btn}>생성하기</button>
+      </div>
     </div>
   );
 }
