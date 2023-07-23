@@ -2,3 +2,7 @@
   width: 68px;
   height: 68px;
 }
+.active {
+  background-color: #fff;
+  color: black;
+}

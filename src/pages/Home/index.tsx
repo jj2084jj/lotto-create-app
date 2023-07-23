@@ -7,7 +7,9 @@ export default function HomeContainer() {
   const [balls, setBalls] = useState(ballsArr);
 
   function selectBalls(value: number) {
-    setBalls((el: any) => (el[value].active = true));
+    const convert = [...balls];
+    convert[value - 1].active = true;
+    setBalls([...convert]);
   }
 
   return (
@@ -18,13 +20,15 @@ export default function HomeContainer() {
           <p>원하는 번호를 선택 후, 랜덤으로 번호가 출력됩니다</p>
         </hgroup>
         <div className="flex">
-          {balls.map(
+          {balls?.map(
             (item: { value: number; active: boolean }, index: number) => {
               return (
                 <button
                   key={index}
                   value={item.value}
-                  className={styled.ball}
+                  className={`${styled.ball} ${
+                    item.active ? styled.active : ""
+                  }`}
                   onClick={() => {
                     selectBalls(item.value);
                   }}
@@ -36,6 +40,7 @@ export default function HomeContainer() {
           )}
         </div>
       </section>
+      <button>내보내기</button>
     </div>
   );
 }
