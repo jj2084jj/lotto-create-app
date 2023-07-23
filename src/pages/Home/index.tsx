@@ -8,7 +8,8 @@ export default function HomeContainer() {
 
   function selectBalls(value: number) {
     const convert = [...balls];
-    convert[value - 1].active = true;
+    const state = convert[value - 1].active;
+    convert[value - 1].active = !state;
     setBalls([...convert]);
   }
 
