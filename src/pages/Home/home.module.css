@@ -1,17 +1,74 @@
 .ball {
   cursor: pointer;
-  width: 68px;
-  height: 68px;
+  width: 48px;
+  height: 48px;
+  border-radius: 30px;
+  opacity: 0.4;
 }
+.ball:nth-child(n) {
+  background-color: #fbc400;
+  color: white;
+}
+.ball:nth-child(n + 11) {
+  background-color: #68c7f1;
+  color: white;
+}
+.ball:nth-child(n + 21) {
+  background-color: #fe7171;
+  color: white;
+}
+.ball:nth-child(n + 31) {
+  background-color: #a9a9a9;
+  color: white;
+}
+.ball:nth-child(n + 41) {
+  background-color: #b0d841;
+  color: white;
+}
+
 .active {
-  background-color: #fff;
-  color: black;
+  opacity: 1;
+}
+.reset_btn {
+  position: fixed;
+  right: 24px;
+  bottom: 90px;
+  background-color: rgba(255, 255, 255, 0.901);
+  width: 70px;
+  height: 70px;
+  z-index: 999;
+  border-radius: 50px;
+  font-size: 16px;
+  color: #202020;
 }
 .create_btn {
   position: fixed;
   bottom: 0;
-  background-color: red;
+  padding: 20px 0;
+  background-color: #2a9fff;
   border-radius: 50px 50px 0 0;
+  font-weight: 700;
   width: 100vw;
   border: none;
+}
+.lotto_wrap {
+  width: calc(100% - 32px);
+  margin: 0 auto;
+}
+.lotto_wrap h3 {
+  margin-bottom: 10px;
+}
+.lotto_box {
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  color: #202020;
+  justify-content: center;
+}
+.lotto_box > div {
+  padding: 10px 15px;
+  font-size: 25px;
+  font-weight: 700;
 }

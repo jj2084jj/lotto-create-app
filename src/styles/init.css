@@ -99,9 +99,8 @@ section {
 }
 
 button {
-  border: solid 1px #efefef;
+  border: none;
   background-color: rgba(128, 128, 128, 0.346);
-  padding: 1.25rem;
   border-radius: 8px;
   text-align: center;
   font-size: 24px;

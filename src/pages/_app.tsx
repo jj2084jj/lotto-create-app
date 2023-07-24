@@ -1,4 +1,4 @@
-import NavigationContainer from "@/components/navigation";
+import NavigationContainer from "@/components/Navigation";
 import "@/styles/globals.css";
 import "@/styles/init.css";
 import type { AppProps } from "next/app";
