@@ -1,35 +1,50 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useNumberCreate from "@/utils/useNumberCreate";
 import styled from "../Home/home.module.css";
 import { GrPowerReset } from "react-icons/gr";
+import Alert from "@/components/Alert";
 
 export default function HomeContainer() {
   const ballsArr = useNumberCreate(45);
   const [balls, setBalls] = useState(ballsArr);
+  const [alertState, setAlert] = useState(false);
   const [lotto, setLotto] = useState<any[]>([]);
 
+  // timeout alert
+  useEffect(() => {
+    const activeTime = setTimeout(() => setAlert(false), 3000);
+    return () => {
+      if (activeTime) {
+        clearTimeout(activeTime);
+      }
+    };
+  }, [alertState]);
+
   function setLottoMix() {
-    console.log("setLottoMix");
     const originBall = balls.filter((el: any) => el.active === true); // 기존 볼
     const selectBall = balls.filter((el: any) => el.active !== true); // 선택안된 볼
     const arr = [...originBall];
 
     for (let i = 0; 7 - originBall.length > i; i++) {
-      const landomArr = landom(selectBall, originBall.length);
-      arr.push(landomArr);
+      const randomArr = random(selectBall, originBall.length);
+      arr.push(randomArr);
     }
     arr.sort((a, b) => a.value - b.value);
+    window.scrollTo(0, 0);
+
     setLotto(arr);
+    setAlert(true);
   }
 
+  // reset arr
   function reset() {
     const convert = [...balls];
     convert.forEach((el) => (el.active = false));
     setBalls([...convert]);
   }
 
+  // 볼 선택
   function selectBalls(value: number) {
-    console.log("selectBalls");
     const convert = [...balls];
     const state = convert[value - 1].active;
     convert[value - 1].active = !state;
@@ -45,15 +60,17 @@ export default function HomeContainer() {
     }
   }
 
-  function landom(arr: any[], langth: number) {
+  // random
+  function random(arr: any[], langth: number) {
     let count = 45 - langth;
-    const dc = Math.floor(Math.random() * count) + 1;
-    return arr[dc - 1];
+    const randomIdx = Math.floor(Math.random() * count) + 1;
+    return arr[randomIdx - 1];
   }
 
   return (
     <div>
-      <section className="container mt-6">
+      <Alert active={alertState} />
+      <section className="container mt-3">
         <hgroup className="mb-4">
           <h1 className="mb-1">로또 자동 생성기</h1>
           <p>
@@ -63,7 +80,7 @@ export default function HomeContainer() {
         </hgroup>
         {lotto.length > 0 ? (
           <div className={styled.lotto_wrap}>
-            <h3>추첨번호!</h3>
+            <h3>생성번호</h3>
             <div className={styled.lotto_box}>
               {lotto.map((item, index) => {
                 return <div key={index}>{item.value}</div>;
