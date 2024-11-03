@@ -1,32 +1,16 @@
 import { useEffect } from "react";
 
 export default function ScrollTest() {
-  // useEffect(() => {
-  //   const hash = window.location.hash.substring(1);
-  //   if (hash) {
-  //     const targetElement = document.getElementById(hash);
-
-  //     if (targetElement) {
-  //       const offset = 100; // 상단 여백 (픽셀 단위)
-  //       const elementPosition =
-  //         targetElement.getBoundingClientRect().top + window.pageYOffset;
-  //       const offsetPosition = elementPosition - offset;
-
-  //       window.scrollTo({
-  //         top: offsetPosition,
-  //         behavior: "smooth",
-  //       });
-  //     }
-  //   }
-  // }, [window]);
-  // const handleScroll = () => {};
   return (
-    <div style={{ scrollBehavior: "smooth" }}>
+    <div
+      style={{ scrollBehavior: "smooth", height: "100vh", overflow: "auto" }}
+    >
       <div
         style={{
           position: "sticky",
-          top: 0,
+          top: "56px",
           left: 0,
+          zIndex: 1000, // 고정 요소가 스크롤 시 다른 요소 위에 보이도록 설정
         }}
       >
         <nav
@@ -39,7 +23,7 @@ export default function ScrollTest() {
           <a
             href="#content1"
             style={{
-              width: "30%",
+              width: "33.3%",
               display: "block",
               background: "#cccccc",
               height: "60px",
@@ -50,9 +34,9 @@ export default function ScrollTest() {
           <a
             href="#content2"
             style={{
-              width: "30%",
+              width: "33.3%",
               display: "block",
-              background: "#cccccc",
+              background: "#a4a4a4",
               height: "60px",
             }}
           >
@@ -61,9 +45,9 @@ export default function ScrollTest() {
           <a
             href="#content3"
             style={{
-              width: "30%",
+              width: "33.3%",
               display: "block",
-              background: "#cccccc",
+              background: "#f0f0f0",
               height: "60px",
             }}
           >
@@ -71,7 +55,7 @@ export default function ScrollTest() {
           </a>
         </nav>
       </div>
-      <div style={{ scrollBehavior: "smooth" }}>
+      <div>
         <section
           id="content1"
           style={{
@@ -82,7 +66,7 @@ export default function ScrollTest() {
         >
           <div
             style={{
-              minHeight: "800px",
+              minHeight: "1200px",
             }}
           >
             content1 영역
@@ -98,10 +82,10 @@ export default function ScrollTest() {
         >
           <div
             style={{
-              minHeight: "800px",
+              minHeight: "1200px",
             }}
           >
-            content1 영역
+            content2 영역
           </div>
         </section>
         <section
@@ -114,10 +98,10 @@ export default function ScrollTest() {
         >
           <div
             style={{
-              minHeight: "800px",
+              minHeight: "1200px",
             }}
           >
-            content1 영역
+            content3 영역
           </div>
         </section>
       </div>
