@@ -74,7 +74,22 @@ export default function ScrollTest() {
               minHeight: "1200px",
             }}
           >
-            content1 영역
+            <img
+              src="https://market-web-source.s3.ap-northeast-2.amazonaws.com/test1.jpg"
+              alt=""
+            />
+            <img
+              src="https://market-web-source.s3.ap-northeast-2.amazonaws.com/test2.jpg"
+              alt=""
+            />
+            <img
+              src="https://market-web-source.s3.ap-northeast-2.amazonaws.com/test7.jpg"
+              alt=""
+            />
+            <img
+              src="https://market-web-source.s3.ap-northeast-2.amazonaws.com/test8.jpg"
+              alt=""
+            />
           </div>
         </section>
         <section
@@ -90,7 +105,18 @@ export default function ScrollTest() {
               minHeight: "1200px",
             }}
           >
-            content2 영역
+            <img
+              src="https://market-web-source.s3.ap-northeast-2.amazonaws.com/test3.jpg"
+              alt=""
+            />
+            <img
+              src="https://market-web-source.s3.ap-northeast-2.amazonaws.com/test4.jpg"
+              alt=""
+            />
+            <img
+              src="https://market-web-source.s3.ap-northeast-2.amazonaws.com/test9.jpg"
+              alt=""
+            />
           </div>
         </section>
         <section
@@ -106,7 +132,18 @@ export default function ScrollTest() {
               minHeight: "1200px",
             }}
           >
-            content3 영역
+            <img
+              src="https://market-web-source.s3.ap-northeast-2.amazonaws.com/test5.jpg"
+              alt=""
+            />
+            <img
+              src="https://market-web-source.s3.ap-northeast-2.amazonaws.com/test6.jpg"
+              alt=""
+            />
+            <img
+              src="https://market-web-source.s3.ap-northeast-2.amazonaws.com/test10.jpg"
+              alt=""
+            />
           </div>
         </section>
       </div>
