@@ -3,7 +3,12 @@ import { useEffect } from "react";
 export default function ScrollTest2() {
   return (
     <div
-      style={{ scrollBehavior: "smooth", height: "100dvh", overflow: "auto" }}
+      style={{
+        scrollBehavior: "smooth",
+        scrollPaddingTop: "70px",
+        height: "100dvh",
+        overflow: "auto",
+      }}
     >
       <div
         style={{
